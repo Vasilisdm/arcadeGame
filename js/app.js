@@ -31,6 +31,11 @@ var Player = function() {
     this.y = 200;
 };
 
+// creating update method for Player
+Player.prototype.update = function(dt) {
+
+};
+
 /**
  * moved prototype.render outside of the player object declaration
  * in order not to be redifined each time a new instance of the object
