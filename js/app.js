@@ -36,6 +36,10 @@ Player.prototype.update = function(dt) {
 
 };
 
+Player.prototype.handleInput = function(input) {
+    console.log(`handleInput ${input}`);
+};
+
 /**
  * moved prototype.render outside of the player object declaration
  * in order not to be redifined each time a new instance of the object
