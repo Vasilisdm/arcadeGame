@@ -28,10 +28,16 @@ var Player = function() {
     
     this.sprite = 'images/char-boy.png';
 
-    Player.prototype.render = function() {
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    }
-}
+};
+
+/**
+ * moved prototype.render outside of the player object declaration
+ * in order not to be redifined each time a new instance of the object
+ * is created
+ */ 
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
 
 
 // Now instantiate your objects.
