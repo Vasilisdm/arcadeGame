@@ -36,6 +36,7 @@ Player.prototype.update = function(dt) {
 
 };
 
+// creating handleInput method for Player
 Player.prototype.handleInput = function(input) {
     console.log(`handleInput ${input}`);
 };
