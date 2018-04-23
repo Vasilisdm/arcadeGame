@@ -46,6 +46,28 @@ Player.prototype.update = function(dt) {
 // creating handleInput method for Player
 Player.prototype.handleInput = function(input) {
     console.log(`handleInput ${input}`);
+    switch (input) {
+        case 'left':
+            if (this.x > 0) {
+                this.x -= 100;
+            }
+            break;
+        case 'up':
+            if (this.y > 0) {
+                this.y -= 85;
+            }
+            break;
+        case 'right':
+            if (this.x < 505) {
+                this.x += 100;
+            }
+            break;
+        case 'down':
+            if (this.y < 605) {
+                this.y += 85;
+            }
+            break;
+    }
 };
 
 /**
