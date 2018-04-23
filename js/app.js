@@ -1,13 +1,13 @@
-// Enemies our player must avoid
-var Enemy = function() {
+
+var Enemy = function(x, y, velX) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
-    this.x = 0;
-    this.y = 300;
+    this.x = x;
+    this.y = y;
 
     // enemy speed onx axis
     this.velX = velX;
@@ -77,3 +77,10 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+
+// function for creating random numbers used for speed and where the enemy appears
+function random(min, max) {
+  var num = Math.floor(Math.random() * (max - min + 1)) + min;
+  return num;
+}
