@@ -19,6 +19,7 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+    this.x += this.velX * dt;
 };
 
 // Draw the enemy on the screen, required method for game
@@ -60,6 +61,10 @@ Player.prototype.render = function() {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 let allEnemies = [];
+while (allEnemies.length <= 5) {
+    let enemy = new Enemy(-100, randomPosition(1,3), random(100,300));
+    allEnemies.push(enemy);
+}
 // Place the player object in a variable called player
 const player = new Player();
 
@@ -81,6 +86,12 @@ document.addEventListener('keyup', function(e) {
 
 // function for creating random numbers used for speed and where the enemy appears
 function random(min, max) {
-    let num = Math.floor(Math.random() * (max - min)) + min;
-    return num;
+    return num = Math.floor(Math.random() * (max - min +1)) + min;
+}
+
+// created the randomPosition function in order the bugs to appear on different rows
+function randomPosition(min,max) {
+    let num = Math.floor(Math.random() * (max - min +1)) + min;        
+    return num*101;
+    
 }
