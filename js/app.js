@@ -61,7 +61,7 @@ Player.prototype.render = function() {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 let allEnemies = [];
-while (allEnemies.length <= 5) {
+while (allEnemies.length <= 4) {
     let enemy = new Enemy(-100, randomPosition(1,3), random(100,300));
     allEnemies.push(enemy);
 }
@@ -73,7 +73,7 @@ const player = new Player();
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
-    var allowedKeys = {
+    let allowedKeys = {
         37: 'left',
         38: 'up',
         39: 'right',
@@ -91,7 +91,14 @@ function random(min, max) {
 
 // created the randomPosition function in order the bugs to appear on different rows
 function randomPosition(min,max) {
-    let num = Math.floor(Math.random() * (max - min +1)) + min;        
-    return num*101;
-    
+    let num = Math.floor(Math.random() * (max - min +1)) + min;     
+    if (num === 0) {
+        console.log(Math.ceil(num+120));
+        
+        return Math.ceil(num+120);
+    } else {
+        console.log(Math.ceil(num*120));
+        
+        return Math.ceil(num*120);
+    }
 }
