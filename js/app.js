@@ -6,6 +6,11 @@ var Enemy = function() {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
+    this.x = 0;
+    this.y = 300;
+
+    // enemy speed onx axis
+    this.velX = velX;
 };
 
 // Update the enemy's position, required method for game
@@ -26,6 +31,7 @@ Enemy.prototype.render = function() {
 // a handleInput() method.
 var Player = function() {
     this.sprite = 'images/char-boy.png';
+
     // setting initial values for x and y axes 
     this.x = 200;
     this.y = 400;
