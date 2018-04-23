@@ -27,8 +27,8 @@ Enemy.prototype.render = function() {
 var Player = function() {
     this.sprite = 'images/char-boy.png';
     // setting initial values for x and y axes 
-    this.x = 100;
-    this.y = 200;
+    this.x = 200;
+    this.y = 400;
 };
 
 // creating update method for Player
