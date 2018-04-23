@@ -58,12 +58,12 @@ Player.prototype.handleInput = function(input) {
             }
             break;
         case 'right':
-            if (this.x < 505) {
+            if (this.x < 400) {
                 this.x += 100;
             }
             break;
         case 'down':
-            if (this.y < 605) {
+            if (this.y < 400) {
                 this.y += 85;
             }
             break;
@@ -115,12 +115,12 @@ function random(min, max) {
 function randomPosition(min,max) {
     let num = Math.floor(Math.random() * (max - min +1)) + min;     
     if (num === 0) {
-        console.log(Math.ceil(num+120));
+        console.log(Math.ceil(num+85));
         
-        return Math.ceil(num+120);
+        return Math.ceil(num+85);
     } else {
-        console.log(Math.ceil(num*120));
+        console.log(Math.ceil(num*85));
         
-        return Math.ceil(num*120);
+        return Math.ceil(num*85);
     }
 }
