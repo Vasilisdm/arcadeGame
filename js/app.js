@@ -81,6 +81,6 @@ document.addEventListener('keyup', function(e) {
 
 // function for creating random numbers used for speed and where the enemy appears
 function random(min, max) {
-  var num = Math.floor(Math.random() * (max - min + 1)) + min;
+  let num = Math.floor(Math.random() * (max - min + 1)) + min;
   return num;
 }
