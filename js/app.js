@@ -59,7 +59,7 @@ Player.prototype.render = function() {
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-const allEnemies = [];
+let allEnemies = [];
 // Place the player object in a variable called player
 const player = new Player();
 
@@ -81,6 +81,6 @@ document.addEventListener('keyup', function(e) {
 
 // function for creating random numbers used for speed and where the enemy appears
 function random(min, max) {
-  let num = Math.floor(Math.random() * (max - min + 1)) + min;
-  return num;
+    let num = Math.floor(Math.random() * (max - min)) + min;
+    return num;
 }
