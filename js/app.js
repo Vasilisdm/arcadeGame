@@ -49,22 +49,22 @@ Player.prototype.handleInput = function(input) {
     switch (input) {
         case 'left':
             if (this.x > 0) {
-                this.x -= 100;
+                this.x -= 101;
             }
             break;
         case 'up':
             if (this.y > 0) {
-                this.y -= 85;
+                this.y -= 83;
             }
             break;
         case 'right':
             if (this.x < 400) {
-                this.x += 100;
+                this.x += 101;
             }
             break;
         case 'down':
             if (this.y < 400) {
-                this.y += 85;
+                this.y += 83;
             }
             break;
     }
