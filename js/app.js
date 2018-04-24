@@ -113,7 +113,7 @@ function random(min, max) {
 
 // created the randomPosition function in order the bugs to appear on different rows
 function randomPosition(min,max) {
-    let num = Math.floor(Math.random() * (max - min +1)) + min;     
+    random(min, max);     
     if (num === 0) {
         console.log(Math.ceil(num+85));
         
