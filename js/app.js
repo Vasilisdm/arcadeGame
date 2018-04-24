@@ -29,12 +29,12 @@ Enemy.prototype.render = function() {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-var Player = function() {
+var Player = function(x, y) {
     this.sprite = 'images/char-boy.png';
 
     // setting initial values for x and y axes 
-    this.x = 200;
-    this.y = 400;
+    this.x = x;
+    this.y = y;    
 };
 
 // creating update method for Player
@@ -48,7 +48,7 @@ Player.prototype.handleInput = function(input) {
     switch (input) {
         case 'left':
             if (this.x > 0) {
-                this.x -= 101;
+                this.x -= 101;                
             }
             break;
         case 'up':
@@ -78,7 +78,6 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-
 // instatiating the allEnemies array
 let allEnemies = [];
 
@@ -94,8 +93,8 @@ while (allEnemies.length <= 10) {
     allEnemies.push(enemy);
 }
 
-// Place the player object in a variable called player
-const player = new Player();
+// player instatiation
+const player = new Player(200,400);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
