@@ -83,10 +83,11 @@ Player.prototype.render = function() {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 let allEnemies = [];
-while (allEnemies.length <= 4) {
-    let enemy = new Enemy(-100, randomPosition(1,3), random(100,300));
+while (allEnemies.length <= 3) {
+    let enemy = new Enemy(-100,random(0,3)*83/2, 100);
     allEnemies.push(enemy);
 }
+
 // Place the player object in a variable called player
 const player = new Player();
 
@@ -109,18 +110,4 @@ document.addEventListener('keyup', function(e) {
 // function for creating random numbers used for speed and where the enemy appears
 function random(min, max) {
     return num = Math.floor(Math.random() * (max - min +1)) + min;
-}
-
-// created the randomPosition function in order the bugs to appear on different rows
-function randomPosition(min,max) {
-    random(min, max);     
-    if (num === 0) {
-        console.log(Math.ceil(num+85));
-        
-        return Math.ceil(num+85);
-    } else {
-        console.log(Math.ceil(num*85));
-        
-        return Math.ceil(num*85);
-    }
 }
