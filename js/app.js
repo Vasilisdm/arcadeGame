@@ -1,4 +1,3 @@
-
 var Enemy = function(x, y, velX) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
@@ -9,7 +8,7 @@ var Enemy = function(x, y, velX) {
     this.x = x;
     this.y = y;
 
-    // enemy speed onx axis
+    // enemy speed on x-axis
     this.velX = velX;
 };
 
@@ -80,18 +79,23 @@ Player.prototype.render = function() {
 };
 
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
+// instatiating the allEnemies array
 let allEnemies = [];
-while (allEnemies.length <= 3) {
-    let enemy = new Enemy(-100,random(0,3)*83/2, 100);
+
+// the value that is going to be subtracted from the y-axis position 
+// during instatiation of the enemy in order for the bug to be centred 
+const bugOffset = 20;
+
+// creating enemies/bugs until their total number is 10 or smaller
+while (allEnemies.length <= 10) {
+
+    // instatiating the enemies with random y-position and velocity
+    let enemy = new Enemy(-101, random(1,3)*83-bugOffset, random(20,100));
     allEnemies.push(enemy);
 }
 
 // Place the player object in a variable called player
 const player = new Player();
-
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
@@ -109,5 +113,5 @@ document.addEventListener('keyup', function(e) {
 
 // function for creating random numbers used for speed and where the enemy appears
 function random(min, max) {
-    return num = Math.floor(Math.random() * (max - min +1)) + min;
+    return Math.floor(Math.random() * (max - min +1)) + min;
 }
