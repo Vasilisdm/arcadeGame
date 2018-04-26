@@ -21,9 +21,9 @@ Enemy.prototype.update = function(dt) {
     this.x += this.velX * dt;
 
     if (this.x >= 600) {
-        allEnemies.forEach(function(enemy){
-            enemy.reset();
-        });
+
+        // invoking reset method for each enemy
+        this.reset();
     }
 };
 
