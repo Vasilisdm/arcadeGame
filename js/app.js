@@ -19,6 +19,12 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x += this.velX * dt;
+
+    if (this.x >= 600) {
+        allEnemies.forEach(function(enemy){
+            enemy.reset();
+        });
+    }
 };
 
 // Draw the enemy on the screen, required method for game
@@ -26,6 +32,11 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+Enemy.prototype.reset = function() {
+    this.x      = -101;
+    this.y      = random(1,3)*83-bugOffset;
+    this.velX   = random(20,100);
+}
 
 /**
  * Player constructor function 
