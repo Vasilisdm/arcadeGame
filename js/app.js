@@ -39,8 +39,13 @@ var Player = function(x, y) {
 
 // creating update method for Player
 Player.prototype.update = function(dt) {
+
+    /**
+     * if y is lower than zero then water has reached,
+     * so call the player.reset
+     */
     if (this.y < 0) {
-        this.reset();
+        player.reset();
     }
 };
 
