@@ -39,7 +39,9 @@ var Player = function(x, y) {
 
 // creating update method for Player
 Player.prototype.update = function(dt) {
-
+    if (this.y < 0) {
+        this.reset();
+    }
 };
 
 // creating handleInput method for Player
@@ -76,6 +78,12 @@ Player.prototype.handleInput = function(input) {
  */ 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+// defining the reset method of player
+Player.prototype.reset = function(){
+    this.x = 200;
+    this.y = 400;
 };
 
 // instatiating the allEnemies array
