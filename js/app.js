@@ -112,7 +112,7 @@ let allEnemies = [];
 const bugOffset = 20;
 
 // creating enemies/bugs until their total number is 10 or smaller
-while (allEnemies.length <= 10) {
+while (allEnemies.length <= 4) {
 
     // instatiating the enemies with random y-position and velocity
     let enemy = new Enemy(-101, random(1,3)*83-bugOffset, random(20,100));
