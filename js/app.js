@@ -84,6 +84,21 @@ Player.prototype.update = function(dt) {
     }
 };
 
+/**
+ * added the appropriate keycodes in order to check which arrow key was pressed.
+ */
+document.addEventListener('keyup', function(e) {
+    let allowedKeys = {
+        37: 'left',
+        38: 'up',
+        39: 'right',
+        40: 'down'
+    };
+
+    // with keyCode I am getting the unicode value of the pressed keyboard key
+    player.handleInput(allowedKeys[e.keyCode]);
+});
+
 // creating handleInput method for Player
 Player.prototype.handleInput = function(input) {
     console.log(`handleInput ${input}`);
@@ -144,20 +159,7 @@ while (allEnemies.length <= 4) {
 // player instatiation
 const player = new Player(200,400);
 
-/**
- * added the appropriate keycodes in order to check which arrow key was pressed.
- */
-document.addEventListener('keyup', function(e) {
-    let allowedKeys = {
-        37: 'left',
-        38: 'up',
-        39: 'right',
-        40: 'down'
-    };
 
-    // with keyCode I am getting the unicode value of the pressed keyboard key
-    player.handleInput(allowedKeys[e.keyCode]);
-});
 
 
 // function for creating random numbers used for speed and where the enemy appears
