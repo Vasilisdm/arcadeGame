@@ -1,4 +1,4 @@
-var Enemy = function(x, y, velX) {
+let Enemy = function(x, y, velX) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -64,7 +64,7 @@ Enemy.prototype.collisionDetection = function() {
  * Player constructor function 
  * Player has update(), render(), handleInput() and reset() methods
  */
-var Player = function(x, y) {
+let Player = function(x, y) {
     this.sprite = 'images/char-boy.png';
 
     // setting initial values for x and y axes 
@@ -158,8 +158,6 @@ while (allEnemies.length <= 4) {
 
 // player instatiation
 const player = new Player(200,400);
-
-
 
 
 // function for creating random numbers used for speed and where the enemy appears
