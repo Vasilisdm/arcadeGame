@@ -111,7 +111,7 @@ let allEnemies = [];
 // during instatiation of the enemy in order for the bug to be centred 
 const bugOffset = 20;
 
-// creating enemies/bugs until their total number is 10 or smaller
+// creating enemies/bugs until their total number is 4 or smaller
 while (allEnemies.length <= 4) {
 
     // instatiating the enemies with random y-position and velocity
