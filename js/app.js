@@ -25,6 +25,8 @@ Enemy.prototype.update = function(dt) {
         // invoking reset method for each enemy
         this.reset();
     }
+     
+
 };
 
 // Draw the enemy on the screen, required method for game
@@ -36,6 +38,15 @@ Enemy.prototype.reset = function() {
     this.x      = -101;
     this.y      = random(1,3)*83-bugOffset;
     this.velX   = random(20,100);
+}
+
+// Implementing collisionDetection 
+Enemy.prototype.collisionDetection = function() {
+    if( player.x >= this.x -70 && player.x <=this.x + 70 ){
+        if( player.y >= this.y -70 && player.y <=  this.y + 70 ){
+           console.log('yeah baby!');
+        }
+    }
 }
 
 /**
