@@ -144,8 +144,9 @@ while (allEnemies.length <= 4) {
 // player instatiation
 const player = new Player(200,400);
 
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+/**
+ * added the appropriate keycodes in order to check which arrow key was pressed.
+ */
 document.addEventListener('keyup', function(e) {
     let allowedKeys = {
         37: 'left',
@@ -154,6 +155,7 @@ document.addEventListener('keyup', function(e) {
         40: 'down'
     };
 
+    // with keyCode I am getting the unicode value of the pressed keyboard key
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
