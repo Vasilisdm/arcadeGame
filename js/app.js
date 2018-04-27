@@ -52,6 +52,10 @@ Enemy.prototype.collisionDetection = function() {
             allEnemies.forEach(function(enemy){
                 enemy.reset();
             });
+
+        // also reset the position of the player
+        player.reset();
+        
         }
     }
 }
