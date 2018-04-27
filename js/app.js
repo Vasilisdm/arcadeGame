@@ -42,8 +42,8 @@ Enemy.prototype.reset = function() {
 
 // Implementing collisionDetection 
 Enemy.prototype.collisionDetection = function() {
-    if( player.x >= this.x -70 && player.x <=this.x + 70 ){
-        if( player.y >= this.y -70 && player.y <=  this.y + 70 ){
+    if( player.x >= this.x - 80 && player.x <=this.x + 80 ){
+        if( player.y >= this.y - 80 && player.y <=  this.y + 80 ){
            console.log('yeah baby!');
         }
     }
