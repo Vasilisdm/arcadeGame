@@ -26,7 +26,7 @@ Enemy.prototype.update = function(dt) {
         this.reset();
     }
      
-
+    this.collisionDetection();
 };
 
 // Draw the enemy on the screen, required method for game
