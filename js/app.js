@@ -44,7 +44,14 @@ Enemy.prototype.reset = function() {
 Enemy.prototype.collisionDetection = function() {
     if( player.x >= this.x - 80 && player.x <=this.x + 80 ){
         if( player.y >= this.y - 80 && player.y <=  this.y + 80 ){
-           console.log('yeah baby!');
+
+        /**
+         * If one of the enemies touched the player, then reset the position of all enemies.
+         * That's why I am using foreach on allEnenmies instead of this
+         */
+            allEnemies.forEach(function(enemy){
+                enemy.reset();
+            });
         }
     }
 }
