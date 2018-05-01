@@ -9,6 +9,10 @@ body {
     flex-direction: row-reverse;
 }
 
+.playerLives {
+    padding-left: 15px;
+}
+
 .playerLives ul {
     list-style:none;
     padding-left: 0;
