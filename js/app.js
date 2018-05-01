@@ -42,8 +42,7 @@ Enemy.prototype.reset = function() {
 
 // Implementing collisionDetection 
 Enemy.prototype.collisionDetection = function() {
-    if( player.x >= this.x - 80 && player.x <=this.x + 80 ){
-        if( player.y >= this.y - 80 && player.y <=  this.y + 80 ){
+    if( player.x >= this.x - 80 && player.x <=this.x + 80 && player.y >= this.y - 77 && player.y <=  this.y + 80) { 
 
         /**
          * If one of the enemies touched the player, then reset the position of all enemies.
@@ -56,7 +55,7 @@ Enemy.prototype.collisionDetection = function() {
         // also reset the position of the player
         player.reset();
         
-        }
+        
     }
 }
 
