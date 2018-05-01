@@ -9,6 +9,10 @@ body {
     flex-direction: row-reverse;
 }
 
+.score {
+    margin-bottom: 0;
+}
+
 .playerLives {
     padding-left: 15px;
 }
