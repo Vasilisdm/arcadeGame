@@ -55,6 +55,9 @@ Enemy.prototype.collisionDetection = function() {
         // also reset the position of the player
         player.reset();
 
+        // if player collided with an enemy remove 30 points from his score
+        player.score -= 30;
+
         // if a collision is detected remove one heart from the player's lives
         const playerLivesUl = document.querySelector('.playerLives ul');
         playerLivesUl.removeChild(playerLivesUl.lastElementChild);
