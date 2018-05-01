@@ -84,7 +84,8 @@ let Player = function(x, y) {
     this.lives = 3;
     // setting initial values for x and y axes 
     this.x = x;
-    this.y = y;    
+    this.y = y; 
+    this.score = 0;   
 };
 
 // creating update method for Player
@@ -96,6 +97,9 @@ Player.prototype.update = function(dt) {
      */
     if (this.y < 0) {
         player.reset();
+        let gameScore = document.querySelector('.score');
+        player.score += 100;
+        gameScore.innerHTML = `Game Score:${player.score}`;
     }
 };
 
