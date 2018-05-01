@@ -48,13 +48,16 @@ Enemy.prototype.collisionDetection = function() {
          * If one of the enemies touched the player, then reset the position of all enemies.
          * That's why I am using foreach on allEnenmies instead of this
          */
-            allEnemies.forEach(function(enemy){
-                enemy.reset();
-            });
+        allEnemies.forEach(function(enemy){
+            enemy.reset();
+        });
 
         // also reset the position of the player
         player.reset();
-        
+
+        // if a collision is detected remove one heart from the player's lives
+        const playerLivesUl = document.querySelector('.playerLives ul');
+        playerLivesUl.removeChild(playerLivesUl.lastElementChild);
         
     }
 }
