@@ -66,6 +66,7 @@ Enemy.prototype.collisionDetection = function() {
 let Player = function(x, y) {
     this.sprite = 'images/char-boy.png';
 
+    this.lives = 3;
     // setting initial values for x and y axes 
     this.x = x;
     this.y = y;    
@@ -162,4 +163,11 @@ const player = new Player(200,400);
 // function for creating random numbers used for speed and where the enemy appears
 function random(min, max) {
     return Math.floor(Math.random() * (max - min +1)) + min;
+}
+
+
+for (i = 0; i < player.lives; i++) {
+    let heart = document.createElement('li');
+    heart.innerHTML = '<img src="images/heart.png" alt="heart">';
+    document.querySelector('.playerLives ul').appendChild(heart);
 }
