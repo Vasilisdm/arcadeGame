@@ -58,7 +58,19 @@ Enemy.prototype.collisionDetection = function() {
         // if a collision is detected remove one heart from the player's lives
         const playerLivesUl = document.querySelector('.playerLives ul');
         playerLivesUl.removeChild(playerLivesUl.lastElementChild);
+        player.lives -= 1;
         
+        if (player.lives == 0) {
+
+            allEnemies.forEach(function(enemy){
+                enemy.reset();
+            });
+
+            player.reset();
+            player.lives = 3;
+            player.addLives();
+
+        }
     }
 }
 
@@ -144,6 +156,16 @@ Player.prototype.reset = function(){
     this.y = 400;
 };
 
+// addLives method appends lives/hearts to playerLives ul
+Player.prototype.addLives = function() {
+    // create as many lives as the player's
+    for (i = 0; i < this.lives; i++) {
+        let heart = document.createElement('li');
+        heart.innerHTML = '<img src="images/heart.png" alt="heart">';
+        document.querySelector('.playerLives ul').appendChild(heart);
+    }
+}
+
 // instatiating the allEnemies array
 let allEnemies = [];
 
@@ -162,15 +184,13 @@ while (allEnemies.length <= 4) {
 // player instatiation
 const player = new Player(200,400);
 
+// calling addLives on player in order for the hearts to be inserted to the DOM
+player.addLives();
+
 
 // function for creating random numbers used for speed and where the enemy appears
 function random(min, max) {
     return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-// create as many lives as the player's
-for (i = 0; i < player.lives; i++) {
-    let heart = document.createElement('li');
-    heart.innerHTML = '<img src="images/heart.png" alt="heart">';
-    document.querySelector('.playerLives ul').appendChild(heart);
-}
+
