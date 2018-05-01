@@ -165,7 +165,7 @@ function random(min, max) {
     return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-
+// create as many lives as the player's
 for (i = 0; i < player.lives; i++) {
     let heart = document.createElement('li');
     heart.innerHTML = '<img src="images/heart.png" alt="heart">';
