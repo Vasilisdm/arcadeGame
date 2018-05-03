@@ -170,7 +170,7 @@ Player.prototype.addLives = function() {
 }
 
 // instatiating the allEnemies array
-let allEnemies = [];
+const allEnemies = [];
 
 // the value that is going to be subtracted from the y-axis position 
 // during instatiation of the enemy in order for the bug to be centred 
