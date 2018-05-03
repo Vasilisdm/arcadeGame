@@ -82,7 +82,7 @@ Enemy.prototype.collisionDetection = function() {
  * Player has update(), render(), handleInput() and reset() methods
  */
 let Player = function(x, y) {
-    this.sprite = 'images/char-boy.png';
+    this.sprite = 'images/char-horn-girl.png';
 
     this.lives = 3;
     // setting initial values for x and y axes 
