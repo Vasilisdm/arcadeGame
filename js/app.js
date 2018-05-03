@@ -5,11 +5,7 @@ let Enemy = function(x, y, velX) {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
-    this.x = x;
-    this.y = y;
-
-    // enemy speed on x-axis
-    this.velX = velX;
+    this.reset();
 };
 
 // Update the enemy's position, required method for game
@@ -82,7 +78,7 @@ Enemy.prototype.collisionDetection = function() {
  * Player has update(), render(), handleInput() and reset() methods
  */
 let Player = function(x, y) {
-    this.sprite = 'images/char-horn-girl.png';
+    this.sprite = 'images/char-boy.png';
 
     this.lives = 3;
     // setting initial values for x and y axes 
@@ -184,8 +180,7 @@ const bugOffset = 20;
 while (allEnemies.length <= 4) {
 
     // instatiating the enemies with random y-position and velocity
-    let enemy = new Enemy(-101, random(1,3)*83-bugOffset, random(20,100));
-    allEnemies.push(enemy);
+    allEnemies.push(new Enemy());
 }
 
 // player instatiation
