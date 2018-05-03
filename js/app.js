@@ -196,7 +196,7 @@ while (allEnemies.length <= 4) {
 }
 
 // player instatiation
-let player = new Player(2,200,400);
+const player = new Player(0,200,400);
 
 // calling addLives on player in order for the hearts to be inserted to the DOM
 player.addLives();
@@ -218,6 +218,10 @@ const leftNavigationArrow = document.querySelector('.left-nav-arrow');
 
 // retrieve the index of the selected sprite from the playerAvatars array
 let playerAvatarsIndex = playerAvatars.indexOf(player.sprite);
+
+// invoced addAvatarImg function here in order for the initial avatar selected, 
+// to be appeared in the avatars unordered list
+addAvatarImg();
 
 // If the leftNavigationArrow is clicked load the show the previous avatar from the array
 leftNavigationArrow.addEventListener('click',function(){
