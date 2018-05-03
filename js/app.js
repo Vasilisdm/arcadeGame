@@ -30,6 +30,10 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+// the value that is going to be subtracted from the y-axis position 
+// during instatiation of the enemy in order for the bug to be centred 
+const bugOffset = 20;
+
 Enemy.prototype.reset = function() {
     this.x      = -101;
     this.y      = random(1,3)*83-bugOffset;
@@ -171,10 +175,6 @@ Player.prototype.addLives = function() {
 
 // instatiating the allEnemies array
 const allEnemies = [];
-
-// the value that is going to be subtracted from the y-axis position 
-// during instatiation of the enemy in order for the bug to be centred 
-const bugOffset = 20;
 
 // creating enemies/bugs until their total number is 4 or smaller
 while (allEnemies.length <= 4) {
