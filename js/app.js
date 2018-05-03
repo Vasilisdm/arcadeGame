@@ -222,7 +222,7 @@ let playerAvatarsIndex = playerAvatars.indexOf(player.sprite);
 // If the leftNavigationArrow is clicked load the show the previous avatar from the array
 leftNavigationArrow.addEventListener('click',function(){
    
-    if (playerAvatarsIndex >= 0) {
+    if (playerAvatarsIndex > 0) {
         playerAvatarsIndex -= 1;
         addAvatarImg();
     }
