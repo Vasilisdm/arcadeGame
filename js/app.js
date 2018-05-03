@@ -93,8 +93,8 @@ Resources.load(sprites);
  * Player constructor function 
  * Player has update(), render(), handleInput() and reset() methods
  */
-let Player = function(x, y) {
-    this.sprite = sprites[0];
+let Player = function(avatar, x, y) {
+    this.sprite = sprites[avatar];
 
     this.lives = 3;
     // setting initial values for x and y axes 
@@ -196,7 +196,7 @@ while (allEnemies.length <= 4) {
 }
 
 // player instatiation
-const player = new Player(200,400);
+const player = new Player(2,200,400);
 
 // calling addLives on player in order for the hearts to be inserted to the DOM
 player.addLives();
