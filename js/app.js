@@ -93,8 +93,8 @@ Resources.load(playerAvatars);
  * Player constructor function 
  * Player has update(), render(), handleInput() and reset() methods
  */
-let Player = function(avatar, x, y) {
-    this.sprite = playerAvatars[avatar];
+let Player = function(index, x, y) {
+    this.sprite = playerAvatars[index];
 
     this.lives = 3;
     // setting initial values for x and y axes 
