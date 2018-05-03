@@ -196,7 +196,7 @@ while (allEnemies.length <= 4) {
 }
 
 // player instatiation
-const player = new Player(0,200,400);
+let player = new Player(0,200,400);
 
 // calling addLives on player in order for the hearts to be inserted to the DOM
 player.addLives();
@@ -229,6 +229,7 @@ leftNavigationArrow.addEventListener('click',function(){
     if (playerAvatarsIndex > 0) {
         playerAvatarsIndex -= 1;
         addAvatarImg();
+        player = new Player(playerAvatarsIndex,200, 400);
     }
     
 });
@@ -240,6 +241,7 @@ rigthNavigationArrow.addEventListener('click',function(){
     if (playerAvatarsIndex < playerAvatars.length-1) {
         playerAvatarsIndex += 1;
         addAvatarImg();
+        player = new Player(playerAvatarsIndex,200, 400);
     }
     
 });
