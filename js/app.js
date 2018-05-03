@@ -216,11 +216,14 @@ let avatarLiElement = document.createElement('li');
 const rigthNavigationArrow = document.querySelector('.right-nav-arrow');
 const leftNavigationArrow = document.querySelector('.left-nav-arrow');
 
+// retrieve the index of the selected sprite from the playerAvatars array
+let playerAvatarsIndex = playerAvatars.indexOf(player.sprite);
 
 // If the leftNavigationArrow is clicked load the show the previous avatar from the array
 leftNavigationArrow.addEventListener('click',function(){
-    if (playerAvatars.length > 0 ) {
-        i -= 1;
+   
+    if (playerAvatarsIndex >= 0) {
+        playerAvatarsIndex -= 1;
         addAvatarImg();
     }
     
@@ -228,8 +231,9 @@ leftNavigationArrow.addEventListener('click',function(){
 
 // If the rigthNavigationArrow is clicked load the show the next avatar from the array
 rigthNavigationArrow.addEventListener('click',function(){
-    if (playerAvatars.length > 0 ) {
-        i += 1;
+
+    if (playerAvatarsIndex < playerAvatars.length) {
+        playerAvatarsIndex += 1;
         addAvatarImg();
     }
     
@@ -237,6 +241,6 @@ rigthNavigationArrow.addEventListener('click',function(){
 
 // created addAvatarImg function to keep my code DRY
 function addAvatarImg() {
-    avatarLiElement.innerHTML = `<img src=${playerAvatars[i]} alt="avatar">`;
+    avatarLiElement.innerHTML = `<img src=${playerAvatars[playerAvatarsIndex]} alt="avatar">`;
     document.querySelector('.avatarUl').appendChild(avatarLiElement);
 }
