@@ -17,9 +17,16 @@ body {
     position: absolute;
     top: 20%;
     left: 50%;
-    min-width: 300px;
+    min-width: 340px;
     text-align: center;
     transform: translateX(-50%);
+    background-color: #dfd9c8;
+    border-radius: 10px;
+}
+
+.avatarUl {
+    list-style: none;
+    padding-left: 0;
 }
 
 .score {
