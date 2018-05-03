@@ -216,6 +216,13 @@ let avatarLiElement = document.createElement('li');
 const rigthNavigationArrow = document.querySelector('.right-nav-arrow');
 const leftNavigationArrow = document.querySelector('.left-nav-arrow');
 
+const avatarSelectionButton = document.querySelector('.avatar-selected');
+
+// when the avatarSelectionButton is clicked hide the avatar selection window
+avatarSelectionButton.addEventListener('click',function(){
+    avatarSelection.style.display = "none";
+});
+
 // retrieve the index of the selected sprite from the playerAvatars array
 let playerAvatarsIndex = playerAvatars.indexOf(player.sprite);
 
