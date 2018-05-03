@@ -210,7 +210,7 @@ function random(min, max) {
 
 const avatarSelection = document.querySelector('.avatarSelection');
 let avatarImg = document.createElement('li');
-for (i = 0; i < sprites.length; i++ ){
+for (let i = 0; i < sprites.length; i++ ){
     avatarImg.innerHTML = `<img src=${sprites[i]} alt="avatar">`;
     document.querySelector('.avatarUl').appendChild(avatarImg);
 }
