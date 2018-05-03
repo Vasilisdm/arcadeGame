@@ -77,12 +77,24 @@ Enemy.prototype.collisionDetection = function() {
     }
 }
 
+// Creating the array of all the available avatars
+const sprites = [
+    'images/char-boy.png', 
+    'images/char-cat-girl.png',
+    'images/char-horn-girl.png',
+    'images/char-pink-girl.png',
+    'images/char-princess-girl.png'
+];
+
+// Loading the avatars in order for drawImage to work properly
+Resources.load(sprites);
+
 /**
  * Player constructor function 
  * Player has update(), render(), handleInput() and reset() methods
  */
 let Player = function(x, y) {
-    this.sprite = 'images/char-boy.png';
+    this.sprite = sprites[0];
 
     this.lives = 3;
     // setting initial values for x and y axes 
@@ -154,7 +166,7 @@ Player.prototype.handleInput = function(input) {
  * is created
  */ 
 Player.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // defining the reset method of player
