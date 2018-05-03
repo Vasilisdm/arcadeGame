@@ -196,7 +196,7 @@ while (allEnemies.length <= 4) {
 }
 
 // player instatiation
-const player = new Player(2,200,400);
+let player = new Player(2,200,400);
 
 // calling addLives on player in order for the hearts to be inserted to the DOM
 player.addLives();
@@ -229,10 +229,11 @@ leftNavigationArrow.addEventListener('click',function(){
     
 });
 
+
 // If the rigthNavigationArrow is clicked load the show the next avatar from the array
 rigthNavigationArrow.addEventListener('click',function(){
 
-    if (playerAvatarsIndex < playerAvatars.length) {
+    if (playerAvatarsIndex < playerAvatars.length-1) {
         playerAvatarsIndex += 1;
         addAvatarImg();
     }
