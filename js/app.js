@@ -209,8 +209,34 @@ function random(min, max) {
 
 
 const avatarSelection = document.querySelector('.avatarSelection');
+
+// creating the avatar li element in which I am going to append the img element with the corresponding avatar path
 let avatarLiElement = document.createElement('li');
-for (let i = 0; i < playerAvatars.length; i++ ){
+
+const rigthNavigationArrow = document.querySelector('.right-nav-arrow');
+const leftNavigationArrow = document.querySelector('.left-nav-arrow');
+
+
+// If the leftNavigationArrow is clicked load the show the previous avatar from the array
+leftNavigationArrow.addEventListener('click',function(){
+    if (playerAvatars.length > 0 ) {
+        i -= 1;
+        addAvatarImg();
+    }
+    
+});
+
+// If the rigthNavigationArrow is clicked load the show the next avatar from the array
+rigthNavigationArrow.addEventListener('click',function(){
+    if (playerAvatars.length > 0 ) {
+        i += 1;
+        addAvatarImg();
+    }
+    
+});
+
+// created addAvatarImg function to keep my code DRY
+function addAvatarImg() {
     avatarLiElement.innerHTML = `<img src=${playerAvatars[i]} alt="avatar">`;
     document.querySelector('.avatarUl').appendChild(avatarLiElement);
 }
