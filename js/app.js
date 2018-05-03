@@ -78,7 +78,7 @@ Enemy.prototype.collisionDetection = function() {
 }
 
 // Creating the array of all the available avatars
-const sprites = [
+const playerAvatars = [
     'images/char-boy.png', 
     'images/char-cat-girl.png',
     'images/char-horn-girl.png',
@@ -87,14 +87,14 @@ const sprites = [
 ];
 
 // Loading the avatars in order for drawImage to work properly
-Resources.load(sprites);
+Resources.load(playerAvatars);
 
 /**
  * Player constructor function 
  * Player has update(), render(), handleInput() and reset() methods
  */
 let Player = function(avatar, x, y) {
-    this.sprite = sprites[avatar];
+    this.sprite = playerAvatars[avatar];
 
     this.lives = 3;
     // setting initial values for x and y axes 
