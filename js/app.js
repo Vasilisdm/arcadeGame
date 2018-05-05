@@ -116,7 +116,7 @@ Gem.prototype.render = function() {
     ctx.drawImage(Resources.get(this.gem), this.x, this.y);
 }
 
-let gem = new Gem(random(0,2),random(0,4)*100,random(1,3)*83-20);
+let gem = new Gem(random(0,2),random(0,4)*101,random(1,3)*83-20);
 
 
 // Creating the array of all the available avatars
