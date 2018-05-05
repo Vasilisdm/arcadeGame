@@ -40,6 +40,8 @@ Enemy.prototype.reset = function() {
     this.velX   = random(20,100);
 }
 
+let gameScore = document.querySelector('.score');
+
 // Implementing collisionDetection 
 Enemy.prototype.collisionDetection = function() {
     if( player.x >= this.x - 80 && player.x <=this.x + 80 && player.y >= this.y - 77 && player.y <=  this.y + 80) { 
@@ -71,6 +73,7 @@ Enemy.prototype.collisionDetection = function() {
 
             player.reset();
             player.score = 0;
+            gameScore.innerHTML = `Game Score:${player.score}`;
             player.lives = 3;
             player.addLives();
 
@@ -123,7 +126,6 @@ Player.prototype.update = function(dt) {
      */
     if (this.y < 0) {
         player.reset();
-        let gameScore = document.querySelector('.score');
         player.score += 100;
         gameScore.innerHTML = `Game Score:${player.score}`;
     }
