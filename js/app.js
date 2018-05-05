@@ -236,7 +236,7 @@ leftNavigationArrow.addEventListener('click',function(){
     if (playerAvatarsIndex > 0) {
         playerAvatarsIndex -= 1;
         addAvatarImg();
-        player = new Player(playerAvatarsIndex,200, 400);
+        player.sprite = playerAvatars[playerAvatarsIndex];
     }
     
 });
@@ -248,7 +248,7 @@ rigthNavigationArrow.addEventListener('click',function(){
     if (playerAvatarsIndex < playerAvatars.length-1) {
         playerAvatarsIndex += 1;
         addAvatarImg();
-        player = new Player(playerAvatarsIndex,200, 400);
+        player.sprite = playerAvatars[playerAvatarsIndex];
     }
     
 });
