@@ -113,6 +113,7 @@ Gem.prototype.render = function() {
 
 let gem = new Gem(random(0,2),random(0,4)*101,random(1,3)*83-20);
 
+// getting the index of the gem based on their index on in the gemStones array
 let gemArrayIndex = gemStones.indexOf(gem.gemType);
 
 Gem.prototype.gemCollection = function() {
@@ -123,6 +124,7 @@ Gem.prototype.gemCollection = function() {
         // getting the index of the gem that is rendered on the canvas
         gemArrayIndex = gemStones.indexOf(gem.gemType);
 
+        // based on which gem appeared I am increasing the game score
         switch (gemArrayIndex) {
             case 0:
                 player.score += 50;
