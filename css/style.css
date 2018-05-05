@@ -36,6 +36,10 @@ button {
     padding-top: 15px;
 }
 
+.avatarSelection h5 {
+    text-decoration: underline;
+}
+
 .avatarUl {
     list-style: none;
     padding-left: 0;
@@ -99,6 +103,11 @@ button {
 .modal-footer {
     display: flex;
     justify-content: center;
+}
+
+.modal-score {
+    text-align: center;
+    text-decoration: underline;
 }
 
 .modal-body p {
