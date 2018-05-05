@@ -13,6 +13,7 @@
 * Everytime you reach the water you are awarded with 100 points.
 * If you get touched by a bug you loose 1 life and your score is reduced by 30 points. 
 * If you loose all your lives(you get 3 in total), the game is over and your score is set back to zero!
+* Keep your eyes open for precious gem stones that might appear! Collecting each of them increases your game score! The blue gem grants you 50points, the green one 100points and last but not least the orange one 200points!
 
 Watch out for those nasty bugs and have fun!
 
