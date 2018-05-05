@@ -9,7 +9,6 @@ button {
     height:30px;
     border-radius: 5px;
     font-size: 12px;
-    /* margin-bottom: 10px; */
 }
 
 .gameContainer {
@@ -106,9 +105,17 @@ button {
     font-size:10px;
 }
 
+.btn {
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
 .btn-primary {
     background-color: #65c44d;
     border-color: #65c44d;
 }
 
-
+.btn-primary:hover {
+    background-color: #51874c;
+    border-color: #51874c;
+}
