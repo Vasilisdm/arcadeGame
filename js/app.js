@@ -93,6 +93,32 @@ while (allEnemies.length <= 4) {
     allEnemies.push(new Enemy());
 }
 
+const gemStones = [
+    'images/Gem Blue.png',
+    'images/Gem Green.png',
+    'images/Gem Orange.png',
+];
+
+Resources.load(gemStones);
+
+let Gem = function(gemIndex, x, y) {
+    this.gem = gemStones[gemIndex];    
+    this.x = x;
+    this.y = y;
+}
+
+
+Gem.prototype.update = function(dt) {
+    this.render();
+}
+
+Gem.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.gem), this.x, this.y);
+}
+
+let gem = new Gem(random(0,2),random(0,4)*100,random(1,3)*83-20);
+
+
 // Creating the array of all the available avatars
 const playerAvatars = [
     'images/char-boy.png', 
