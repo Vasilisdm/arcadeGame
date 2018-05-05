@@ -109,11 +109,19 @@ let Gem = function(gemIndex, x, y) {
 
 
 Gem.prototype.update = function(dt) {
-    this.render();
 }
 
 Gem.prototype.render = function() {
     ctx.drawImage(Resources.get(this.gem), this.x, this.y);
+}
+
+Gem.prototype.gemCollection = function() {
+    if( player.x >= this.x - 80 && player.x <=this.x + 80 && player.y >= this.y - 77 && player.y <=  this.y + 80) { 
+
+        // if player collided with an enemy remove 30 points from his score
+        player.score += 500;
+
+    }
 }
 
 let gem = new Gem(random(0,2),random(0,4)*101,random(1,3)*83-20);
@@ -153,7 +161,7 @@ Player.prototype.update = function(dt) {
      * so call the player.reset
      */
     if (this.y < 0) {
-        player.reset();
+        player.reset();      
         player.score += 100;
         gameScore.innerHTML = `Game Score:${player.score}`;
     }
