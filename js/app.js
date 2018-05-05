@@ -64,7 +64,7 @@ Enemy.prototype.collisionDetection = function() {
         player.lives -= 1;
         
         if (player.lives == 0) {
-
+            $(".modal").modal()
             allEnemies.forEach(function(enemy){
                 enemy.reset();
             });
