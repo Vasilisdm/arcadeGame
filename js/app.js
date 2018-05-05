@@ -102,29 +102,45 @@ const gemStones = [
 Resources.load(gemStones);
 
 let Gem = function(gemIndex, x, y) {
-    this.gem = gemStones[gemIndex];    
+    this.gemType = gemStones[gemIndex];    
     this.x = x;
     this.y = y;
 }
 
-
-Gem.prototype.update = function(dt) {
-}
-
 Gem.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.gem), this.x, this.y);
-}
-
-Gem.prototype.gemCollection = function() {
-    if( player.x >= this.x - 80 && player.x <=this.x + 80 && player.y >= this.y - 77 && player.y <=  this.y + 80) { 
-
-        // if player collided with an enemy remove 30 points from his score
-        player.score += 500;
-
-    }
+    ctx.drawImage(Resources.get(this.gemType), this.x, this.y);
 }
 
 let gem = new Gem(random(0,2),random(0,4)*101,random(1,3)*83-20);
+
+let gemArrayIndex = gemStones.indexOf(gem.gemType);
+
+Gem.prototype.gemCollection = function() {
+ 
+    // if the player collided with the gem, create a new one(gem) and increase the game score
+    if( player.x >= this.x - 80 && player.x <=this.x + 80 && player.y >= this.y - 77 && player.y <=  this.y + 80) { 
+
+        // getting the index of the gem that is rendered on the canvas
+        gemArrayIndex = gemStones.indexOf(gem.gemType);
+
+        switch (gemArrayIndex) {
+            case 0:
+                player.score += 50;
+                gem = new Gem(random(0,2),random(0,4)*101,random(1,3)*83-20);
+                break;
+            case 1:
+                player.score += 100;
+                gem = new Gem(random(0,2),random(0,4)*101,random(1,3)*83-20);
+                break;
+            case 2:
+                player.score += 200;
+                gem = new Gem(random(0,2),random(0,4)*101,random(1,3)*83-20);
+                break;
+        }
+
+        gameScore.innerHTML = `Game Score:${player.score}`;
+    }
+}
 
 
 // Creating the array of all the available avatars
@@ -160,6 +176,7 @@ Player.prototype.update = function(dt) {
      * if y is lower than zero then water has reached,
      * so call the player.reset
      */
+    gem.gemCollection();
     if (this.y < 0) {
         player.reset();      
         player.score += 100;
