@@ -8,12 +8,14 @@ button {
     font-family: 'Press Start 2P', cursive;
     height:30px;
     border-radius: 5px;
+    font-size: 12px;
     margin-bottom: 10px;
 }
 
 .gameContainer {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: center;
 }
 
 .gameCanvas {
@@ -29,6 +31,10 @@ button {
     transform: translateX(-50%);
     background-color: #dfd9c8;
     border-radius: 10px;
+}
+
+.avatarSelection {
+    padding-top: 15px;
 }
 
 .avatarUl {
@@ -52,10 +58,15 @@ button {
 
 .score {
     margin-bottom: 0;
+    text-align: center;
+    padding-right: 70px;
+    margin-top: 20px;
+    /* font-size: 1.5rem; */
 }
 
 .playerLives {
     padding-left: 15px;
+    margin-top: 20px;
 }
 
 .playerLives ul {
