@@ -70,6 +70,7 @@ Enemy.prototype.collisionDetection = function() {
             });
 
             player.reset();
+            player.score = 0;
             player.lives = 3;
             player.addLives();
 
