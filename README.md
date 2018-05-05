@@ -18,7 +18,7 @@ Watch out for those nasty bugs and have fun!
 
 ## Game controls
 
-You move your avatar with your keyboard arrow keys:
+You move your avatar with your keyboard arrow keys.
 
 
 ## How to play
