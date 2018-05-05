@@ -41,6 +41,7 @@ Enemy.prototype.reset = function() {
 }
 
 let gameScore = document.querySelector('.score');
+const modalScore = document.querySelector('.modal-score');
 
 // Implementing collisionDetection 
 Enemy.prototype.collisionDetection = function() {
@@ -67,6 +68,7 @@ Enemy.prototype.collisionDetection = function() {
         
         if (player.lives == 0) {
             $(".modal").modal()
+            modalScore.innerHTML = `Your score was:${player.score}`;
             allEnemies.forEach(function(enemy){
                 enemy.reset();
             });
