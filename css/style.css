@@ -9,7 +9,7 @@ button {
     height:30px;
     border-radius: 5px;
     font-size: 12px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .gameContainer {
@@ -61,7 +61,6 @@ button {
     text-align: center;
     padding-right: 70px;
     margin-top: 20px;
-    /* font-size: 1.5rem; */
 }
 
 .playerLives {
@@ -83,3 +82,33 @@ button {
     width: 70px;
     height: auto;
 }
+
+.avatar-selected {
+    margin-bottom: 10px;
+}
+
+.modal {
+    position: absolute;
+    top: 20%;
+}
+
+.modal-content {
+    background-color: #dfd9c8;
+}
+
+.modal-header, 
+.modal-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-body p {
+    font-size:10px;
+}
+
+.btn-primary {
+    background-color: #65c44d;
+    border-color: #65c44d;
+}
+
+
