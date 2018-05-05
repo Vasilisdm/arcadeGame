@@ -77,6 +77,16 @@ Enemy.prototype.collisionDetection = function() {
     }
 }
 
+// instatiating the allEnemies array
+const allEnemies = [];
+
+// creating enemies/bugs until their total number is 4 or smaller
+while (allEnemies.length <= 4) {
+
+    // instatiating the enemies with random y-position and velocity
+    allEnemies.push(new Enemy());
+}
+
 // Creating the array of all the available avatars
 const playerAvatars = [
     'images/char-boy.png', 
@@ -166,7 +176,7 @@ Player.prototype.handleInput = function(input) {
  * is created
  */ 
 Player.prototype.render = function() {
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // defining the reset method of player
@@ -183,16 +193,6 @@ Player.prototype.addLives = function() {
         heart.innerHTML = '<img src="images/heart.png" alt="heart">';
         document.querySelector('.playerLives ul').appendChild(heart);
     }
-}
-
-// instatiating the allEnemies array
-const allEnemies = [];
-
-// creating enemies/bugs until their total number is 4 or smaller
-while (allEnemies.length <= 4) {
-
-    // instatiating the enemies with random y-position and velocity
-    allEnemies.push(new Enemy());
 }
 
 // player instatiation
