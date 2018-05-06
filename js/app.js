@@ -180,9 +180,9 @@ Player.prototype.update = function(dt) {
      */
     gem.gemCollection();
     if (this.y < 0) {
-        player.reset();      
-        player.score += 100;
-        gameScore.innerHTML = `Game Score:${player.score}`;
+        this.reset();      
+        this.score += 100;
+        gameScore.innerHTML = `Game Score:${this.score}`;
     }
 };
 
